@@ -1,0 +1,41 @@
+type Query {
+  allUsers: [User]
+  allOrders: [Order]
+  getUserByEmail(email: String!): User
+  getOrderByEmail(email: String!): [OrderWithUser]
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!): User
+  deleteUserByEmail(email: String!): Boolean
+  createOrder(input: CreateOrderInput!): Order
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+}
+
+input CreateOrderInput {
+  orderNumber: String!
+  email: String!
+  orderDate: String!
+}
+
+type User {
+  id: ID
+  name: String
+  email: String
+}
+
+type Order {
+  id: ID
+  orderNumber: String
+  email: String
+  orderDate: String
+}
+
+type OrderWithUser {
+  order: Order
+  user: User
+}
