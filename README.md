@@ -2,7 +2,7 @@
 
 This repo is an API demo with Kotlin and Spring Boot using DGS framework.
 
-### Prerequisites:
+### Pre-requisites:
 
 1. gradle
 2. java 21
